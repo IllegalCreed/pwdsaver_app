@@ -94,7 +94,7 @@ export class LoginPage extends Component {
 					</TouchableOpacity>
 					<TouchableOpacity style={[styles.button, { marginLeft: 5, marginRight: 20 }]}
 						onPress={() => {
-							this.props.dispatch(Actions.login(this.state.username, Crypto.SHA256(this.state.password).toString(Crypto.enc.Hex)));
+							this.props.dispatch(Actions.login(this.state.username, Crypto.SHA256(this.state.password).toString(Crypto.enc.Hex)),this.state.password);
 						}} >
 						<Text style={styles.buttonText}>{'登录'}</Text>
 					</TouchableOpacity>
