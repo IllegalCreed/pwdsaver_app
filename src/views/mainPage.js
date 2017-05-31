@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import {
 	TouchableWithoutFeedback,
+	KeyboardAvoidingView,
 	TouchableOpacity,
 	SectionList,
 	ScrollView,
@@ -276,13 +277,14 @@ export class MainPage extends Component {
 	}
 
 	render() {
+		const Container = Platform.OS === 'ios' ? KeyboardAvoidingView : View;
 		return (
 			<View style={{ flex: 1, backgroundColor: '#232323' }}>
 				<Modal
 					animationType={"fade"}
 					transparent={true}
 					visible={this.state.addPwdModalVisible}>
-					<View style={{
+					<Container behavior={'padding'} style={{
 						flex: 1,
 						backgroundColor: '#00000088',
 						justifyContent: 'flex-end',
@@ -336,13 +338,13 @@ export class MainPage extends Component {
 								<Text style={styles.buttonText}>{'添加'}</Text>
 							</TouchableOpacity>
 						</View>
-					</View>
+					</Container>
 				</Modal>
 				<Modal
 					animationType={"fade"}
 					transparent={true}
 					visible={this.state.addGroupModalVisible}>
-					<View style={{
+					<Container behavior={'padding'} style={{
 						flex: 1,
 						backgroundColor: '#00000088',
 						justifyContent: 'flex-end',
@@ -377,13 +379,13 @@ export class MainPage extends Component {
 								<Text style={styles.buttonText}>{'添加'}</Text>
 							</TouchableOpacity>
 						</View>
-					</View>
+					</Container>
 				</Modal>
 				<Modal
 					animationType={"fade"}
 					transparent={true}
 					visible={this.state.updateGroupModalVisible}>
-					<View style={{
+					<Container behavior={'padding'} style={{
 						flex: 1,
 						backgroundColor: '#00000088',
 						justifyContent: 'flex-end',
@@ -434,13 +436,13 @@ export class MainPage extends Component {
 								</TouchableOpacity>
 							</View>
 						</View>
-					</View>
+					</Container>
 				</Modal>
 				<Modal
 					animationType={"fade"}
 					transparent={true}
 					visible={this.state.updatePwdModalVisible}>
-					<View style={{
+					<Container behavior={'padding'} style={{
 						flex: 1,
 						backgroundColor: '#00000088',
 						justifyContent: 'flex-end',
@@ -512,7 +514,7 @@ export class MainPage extends Component {
 								</TouchableOpacity>
 							</View>
 						</View>
-					</View>
+					</Container>
 				</Modal>
 				<SectionList
 					ListFooterComponent={F =>
