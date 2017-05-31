@@ -19,7 +19,7 @@ export function user(state = DefaultUserState, action) {
 			return Object.assign({}, state, {
 				loginState: requestState.LOADING,
 				isLogin: false,
-				password: action.payload.request.data.password
+				password: action.originpwd
 			})
 		case 'login_SUCCESS':
 			let loginResponse = action.payload.data;

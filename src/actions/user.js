@@ -1,6 +1,7 @@
-export function login(username, password) {
+export function login(username, password, originpwd) {
 	return {
 		type: 'login',
+		originpwd,
 		payload: {
 			request: {
 				url: '/user/login',
