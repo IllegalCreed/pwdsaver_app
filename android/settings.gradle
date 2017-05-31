@@ -1,0 +1,3 @@
+rootProject.name = 'pwdsaver_app'
+
+include ':app'
